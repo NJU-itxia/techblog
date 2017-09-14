@@ -7,6 +7,8 @@
 
 ```
 git clone https://github.com/NJU-itxia/techblog.git
+git clone https://github.com/iissnan/hexo-theme-next themes/next
+cd techblog
 npm install
 ```
 
