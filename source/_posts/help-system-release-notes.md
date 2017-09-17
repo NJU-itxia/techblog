@@ -29,7 +29,7 @@ categories:
 * 在预约界面和后台管理界面增加提交反馈的按钮
 * 服务器从ＳＡＥ迁移至腾讯云，域名改为~~http://itxia.club/~~ http://help.itxia.club
 
-![](/images/2016/04/notif2.png)
+![](/images/notif2.png)
 
 #### Fixes
 * 无
