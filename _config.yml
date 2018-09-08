@@ -79,4 +79,4 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/NJU-itxia/techblog.git
-  branch: gh-pages
+  branch: dev
