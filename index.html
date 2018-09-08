@@ -470,6 +470,241 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2018/09/08/front-back-rest-interface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NJU-ITXIA WEB GROUP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/techblog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT侠 WEB 组">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/techblog/2018/09/08/front-back-rest-interface/" itemprop="url">
+                  前后端接口规格
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-08 15:10:21 / 修改时间：15:43:54" itemprop="dateCreated datePublished" datetime="2018-09-08T15:10:21+08:00">2018-09-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/techblog/categories/项目文档/" itemprop="url" rel="index"><span itemprop="name">项目文档</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>下列为后端提供的REST接口，包含uri, 参数, 及返回值</li>
+<li>使用ajax调用, 传递数据格式为json</li>
+</ul>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="用户登入"><a href="#用户登入" class="headerlink" title="用户登入"></a>用户登入</h3><p>地址: <code>/customer/login</code></p>
+<p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phone: string</span><br></pre></td></tr></table></figure></p>
+<p>返回<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">token: string?</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="用户提交预约维修"><a href="#用户提交预约维修" class="headerlink" title="用户提交预约维修"></a>用户提交预约维修</h3><p>地址: <code>/customer/appointment</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name: string,</span><br><span class="line">email: string?,</span><br><span class="line">campus: string,</span><br><span class="line">deviceVersion: string,</span><br><span class="line">systemVersion: string,</span><br><span class="line">description: string,</span><br><span class="line">file: string?</span><br></pre></td></tr></table></figure></p>
+<p>返回:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="用户删除预约"><a href="#用户删除预约" class="headerlink" title="用户删除预约"></a>用户删除预约</h3><p>地址: <code>/customer/deleteAppointment</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="用户登出"><a href="#用户登出" class="headerlink" title="用户登出"></a>用户登出</h3><p>地址: <code>/customer/logout</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="用户获取当前预约"><a href="#用户获取当前预约" class="headerlink" title="用户获取当前预约"></a>用户获取当前预约</h3><p>地址: <code>/customer/getCurrentAppointment</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">appointment: Appointment</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="用户获取历史预约"><a href="#用户获取历史预约" class="headerlink" title="用户获取历史预约"></a>用户获取历史预约</h3><p>地址: <code>/customer/getAppointments</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">appointments: [Appointment]</span><br><span class="line"></span><br><span class="line">Appointment &#123;</span><br><span class="line">    id: string,</span><br><span class="line">    name: string,</span><br><span class="line">    email: string?,</span><br><span class="line">    campus: string,</span><br><span class="line">    deviceVersion: string,</span><br><span class="line">    systemVersion: string,</span><br><span class="line">    description: string,</span><br><span class="line">    file: string?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际效果举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    success: true,</span><br><span class="line">    appointments: [</span><br><span class="line">        &#123;</span><br><span class="line">            id: &quot;asd-sda-sda&quot;,</span><br><span class="line">            name: &quot;小明&quot;,</span><br><span class="line">            email: &quot;12321232@qq.com&quot;,</span><br><span class="line">            campus: &quot;仙林&quot;,</span><br><span class="line">            deviceVersion: &quot;竟然是一部安卓机&quot;,</span><br><span class="line">            systemVersion: &quot;android7.1.1&quot;,</span><br><span class="line">            description: &quot;屏幕坏了，能帮忙换嘛&quot;,</span><br><span class="line">            file: null</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            id: &quot;sasd-dhs-sda&quot;,</span><br><span class="line">            name: &quot;还是小明&quot;,</span><br><span class="line">            email: &quot;12321232@qq.com&quot;,</span><br><span class="line">            campus: &quot;鼓楼&quot;,</span><br><span class="line">            deviceVersion: &quot;我不知道啊&quot;,</span><br><span class="line">            systemVersion: &quot;win10&quot;,</span><br><span class="line">            description: &quot;充不进去电&quot;,</span><br><span class="line">            file: null</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台登陆"><a href="#后台登陆" class="headerlink" title="后台登陆"></a>后台登陆</h3><p>地址: <code>/admin/login</code></p>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username: string,</span><br><span class="line">password: string</span><br></pre></td></tr></table></figure>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">token: string</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台登出"><a href="#后台登出" class="headerlink" title="后台登出"></a>后台登出</h3><p>地址: <code>/admin/logout</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">token: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台修改自己的密码"><a href="#后台修改自己的密码" class="headerlink" title="后台修改自己的密码"></a>后台修改自己的密码</h3><p>地址: <code>/admin/modifyPassword</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oldPassword: string,</span><br><span class="line">newPassword: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="后台查看预约"><a href="#后台查看预约" class="headerlink" title="后台查看预约"></a>后台查看预约</h3><p>地址: <code>/admin/listAppointments</code></p>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">campus: string?, //可以取&quot;xianlin&quot;, &quot;gulou&quot;, &quot;all&quot;, 不传返回全部</span><br><span class="line">status: string?, //可以取&quot;finished&quot;, &quot;unfinished&quot;, &quot;all&quot;, 不传返回全部</span><br></pre></td></tr></table></figure>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">appointments: [Appointment] //已在前面定义</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台接单"><a href="#后台接单" class="headerlink" title="后台接单"></a>后台接单</h3><p>地址: <code>/admin/acceptAppointment</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appointmentId: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台回复预约"><a href="#后台回复预约" class="headerlink" title="后台回复预约"></a>后台回复预约</h3><p>地址: <code>/admin/reply</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">appointmentId: string,</span><br><span class="line">content: string,</span><br></pre></td></tr></table></figure></p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="管理员添加后台账号"><a href="#管理员添加后台账号" class="headerlink" title="管理员添加后台账号"></a>管理员添加后台账号</h3><p>地址 <code>/admin/createMember</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username: string,</span><br><span class="line">password: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="管理员获取后台列表"><a href="#管理员获取后台列表" class="headerlink" title="管理员获取后台列表"></a>管理员获取后台列表</h3><p>地址: <code>/admin/listAllMembers</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="管理员修改后台密码"><a href="#管理员修改后台密码" class="headerlink" title="管理员修改后台密码"></a>管理员修改后台密码</h3><p>地址: <code>/admin/modifyMemberPassword</code></p>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">memberId: string,</span><br><span class="line">newPassword: string</span><br></pre></td></tr></table></figure>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2018/09/08/vue-front-end-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -516,7 +751,7 @@
                 
               
 
-              <time title="创建时间：2018-09-08 13:08:53 / 修改时间：14:07:54" itemprop="dateCreated datePublished" datetime="2018-09-08T13:08:53+08:00">2018-09-08</time>
+              <time title="创建时间：2018-09-08 13:08:53 / 修改时间：15:30:23" itemprop="dateCreated datePublished" datetime="2018-09-08T13:08:53+08:00">2018-09-08</time>
             
 
             
@@ -526,6 +761,24 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/techblog/categories/项目文档/" itemprop="url" rel="index"><span itemprop="name">项目文档</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1021,7 +1274,7 @@
                 
                   <a href="/techblog/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1036,7 +1289,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1048,6 +1303,8 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/techblog/tags/index.html">
                     
+                    
+                      
                     
                       
                     

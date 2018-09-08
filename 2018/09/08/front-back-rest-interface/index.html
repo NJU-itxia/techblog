@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/techblog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/techblog/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/techblog/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/techblog/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/techblog/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/techblog/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/techblog/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="说明 下列为后端提供的REST接口，包含uri, 参数, 及返回值 使用ajax调用, 传递数据格式为json  接口用户登入地址: /customer/login 参数1phone: string 返回12success: bool,token: string?  用户提交预约维修地址: /customer/appointment 参数:1234567name: string,email: st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端接口规格">
+<meta property="og:url" content="https://nju-itxia.github.io/techblog/2018/09/08/front-back-rest-interface/index.html">
+<meta property="og:site_name" content="IT侠 WEB 组">
+<meta property="og:description" content="说明 下列为后端提供的REST接口，包含uri, 参数, 及返回值 使用ajax调用, 传递数据格式为json  接口用户登入地址: /customer/login 参数1phone: string 返回12success: bool,token: string?  用户提交预约维修地址: /customer/appointment 参数:1234567name: string,email: st">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-08T07:43:54.373Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前后端接口规格">
+<meta name="twitter:description" content="说明 下列为后端提供的REST接口，包含uri, 参数, 及返回值 使用ajax调用, 传递数据格式为json  接口用户登入地址: /customer/login 参数1phone: string 返回12success: bool,token: string?  用户提交预约维修地址: /customer/appointment 参数:1234567name: string,email: st">
+
+
+
+
+
+
+  <link rel="canonical" href="https://nju-itxia.github.io/techblog/2018/09/08/front-back-rest-interface/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>前后端接口规格 | IT侠 WEB 组</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/techblog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">IT侠 WEB 组</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">NJU-ITXIA WEB GROUP</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/techblog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/techblog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2018/09/08/front-back-rest-interface/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NJU-ITXIA WEB GROUP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/techblog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT侠 WEB 组">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前后端接口规格
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-08 15:10:21 / 修改时间：15:43:54" itemprop="dateCreated datePublished" datetime="2018-09-08T15:10:21+08:00">2018-09-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/techblog/categories/项目文档/" itemprop="url" rel="index"><span itemprop="name">项目文档</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>下列为后端提供的REST接口，包含uri, 参数, 及返回值</li>
+<li>使用ajax调用, 传递数据格式为json</li>
+</ul>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="用户登入"><a href="#用户登入" class="headerlink" title="用户登入"></a>用户登入</h3><p>地址: <code>/customer/login</code></p>
+<p>参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phone: string</span><br></pre></td></tr></table></figure></p>
+<p>返回<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">token: string?</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="用户提交预约维修"><a href="#用户提交预约维修" class="headerlink" title="用户提交预约维修"></a>用户提交预约维修</h3><p>地址: <code>/customer/appointment</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name: string,</span><br><span class="line">email: string?,</span><br><span class="line">campus: string,</span><br><span class="line">deviceVersion: string,</span><br><span class="line">systemVersion: string,</span><br><span class="line">description: string,</span><br><span class="line">file: string?</span><br></pre></td></tr></table></figure></p>
+<p>返回:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="用户删除预约"><a href="#用户删除预约" class="headerlink" title="用户删除预约"></a>用户删除预约</h3><p>地址: <code>/customer/deleteAppointment</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="用户登出"><a href="#用户登出" class="headerlink" title="用户登出"></a>用户登出</h3><p>地址: <code>/customer/logout</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="用户获取当前预约"><a href="#用户获取当前预约" class="headerlink" title="用户获取当前预约"></a>用户获取当前预约</h3><p>地址: <code>/customer/getCurrentAppointment</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">appointment: Appointment</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="用户获取历史预约"><a href="#用户获取历史预约" class="headerlink" title="用户获取历史预约"></a>用户获取历史预约</h3><p>地址: <code>/customer/getAppointments</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">appointments: [Appointment]</span><br><span class="line"></span><br><span class="line">Appointment &#123;</span><br><span class="line">    id: string,</span><br><span class="line">    name: string,</span><br><span class="line">    email: string?,</span><br><span class="line">    campus: string,</span><br><span class="line">    deviceVersion: string,</span><br><span class="line">    systemVersion: string,</span><br><span class="line">    description: string,</span><br><span class="line">    file: string?</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际效果举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    success: true,</span><br><span class="line">    appointments: [</span><br><span class="line">        &#123;</span><br><span class="line">            id: &quot;asd-sda-sda&quot;,</span><br><span class="line">            name: &quot;小明&quot;,</span><br><span class="line">            email: &quot;12321232@qq.com&quot;,</span><br><span class="line">            campus: &quot;仙林&quot;,</span><br><span class="line">            deviceVersion: &quot;竟然是一部安卓机&quot;,</span><br><span class="line">            systemVersion: &quot;android7.1.1&quot;,</span><br><span class="line">            description: &quot;屏幕坏了，能帮忙换嘛&quot;,</span><br><span class="line">            file: null</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            id: &quot;sasd-dhs-sda&quot;,</span><br><span class="line">            name: &quot;还是小明&quot;,</span><br><span class="line">            email: &quot;12321232@qq.com&quot;,</span><br><span class="line">            campus: &quot;鼓楼&quot;,</span><br><span class="line">            deviceVersion: &quot;我不知道啊&quot;,</span><br><span class="line">            systemVersion: &quot;win10&quot;,</span><br><span class="line">            description: &quot;充不进去电&quot;,</span><br><span class="line">            file: null</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台登陆"><a href="#后台登陆" class="headerlink" title="后台登陆"></a>后台登陆</h3><p>地址: <code>/admin/login</code></p>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username: string,</span><br><span class="line">password: string</span><br></pre></td></tr></table></figure>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">token: string</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台登出"><a href="#后台登出" class="headerlink" title="后台登出"></a>后台登出</h3><p>地址: <code>/admin/logout</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">token: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台修改自己的密码"><a href="#后台修改自己的密码" class="headerlink" title="后台修改自己的密码"></a>后台修改自己的密码</h3><p>地址: <code>/admin/modifyPassword</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">oldPassword: string,</span><br><span class="line">newPassword: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="后台查看预约"><a href="#后台查看预约" class="headerlink" title="后台查看预约"></a>后台查看预约</h3><p>地址: <code>/admin/listAppointments</code></p>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">campus: string?, //可以取&quot;xianlin&quot;, &quot;gulou&quot;, &quot;all&quot;, 不传返回全部</span><br><span class="line">status: string?, //可以取&quot;finished&quot;, &quot;unfinished&quot;, &quot;all&quot;, 不传返回全部</span><br></pre></td></tr></table></figure>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">success: bool,</span><br><span class="line">appointments: [Appointment] //已在前面定义</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台接单"><a href="#后台接单" class="headerlink" title="后台接单"></a>后台接单</h3><p>地址: <code>/admin/acceptAppointment</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">appointmentId: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="后台回复预约"><a href="#后台回复预约" class="headerlink" title="后台回复预约"></a>后台回复预约</h3><p>地址: <code>/admin/reply</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">appointmentId: string,</span><br><span class="line">content: string,</span><br></pre></td></tr></table></figure></p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="管理员添加后台账号"><a href="#管理员添加后台账号" class="headerlink" title="管理员添加后台账号"></a>管理员添加后台账号</h3><p>地址 <code>/admin/createMember</code></p>
+<p>参数:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">username: string,</span><br><span class="line">password: string</span><br></pre></td></tr></table></figure></p>
+<p>返回:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="管理员获取后台列表"><a href="#管理员获取后台列表" class="headerlink" title="管理员获取后台列表"></a>管理员获取后台列表</h3><p>地址: <code>/admin/listAllMembers</code></p>
+<p>参数:</p>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="管理员修改后台密码"><a href="#管理员修改后台密码" class="headerlink" title="管理员修改后台密码"></a>管理员修改后台密码</h3><p>地址: <code>/admin/modifyMemberPassword</code></p>
+<p>参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">memberId: string,</span><br><span class="line">newPassword: string</span><br></pre></td></tr></table></figure>
+<p>返回:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">success: bool</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/techblog/2018/09/08/vue-front-end-note/" rel="next" title="预约系统前端方案">
+                <i class="fa fa-chevron-left"></i> 预约系统前端方案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">NJU-ITXIA WEB GROUP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/techblog/archives/">
+                
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/techblog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/techblog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">2.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户登入"><span class="nav-number">2.1.</span> <span class="nav-text">用户登入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户提交预约维修"><span class="nav-number">2.2.</span> <span class="nav-text">用户提交预约维修</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户删除预约"><span class="nav-number">2.3.</span> <span class="nav-text">用户删除预约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户登出"><span class="nav-number">2.4.</span> <span class="nav-text">用户登出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户获取当前预约"><span class="nav-number">2.5.</span> <span class="nav-text">用户获取当前预约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户获取历史预约"><span class="nav-number">2.6.</span> <span class="nav-text">用户获取历史预约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台登陆"><span class="nav-number">2.7.</span> <span class="nav-text">后台登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台登出"><span class="nav-number">2.8.</span> <span class="nav-text">后台登出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台修改自己的密码"><span class="nav-number">2.9.</span> <span class="nav-text">后台修改自己的密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台查看预约"><span class="nav-number">2.10.</span> <span class="nav-text">后台查看预约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台接单"><span class="nav-number">2.11.</span> <span class="nav-text">后台接单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台回复预约"><span class="nav-number">2.12.</span> <span class="nav-text">后台回复预约</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理员添加后台账号"><span class="nav-number">2.13.</span> <span class="nav-text">管理员添加后台账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理员获取后台列表"><span class="nav-number">2.14.</span> <span class="nav-text">管理员获取后台列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理员修改后台密码"><span class="nav-number">2.15.</span> <span class="nav-text">管理员修改后台密码</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NJU-ITXIA WEB GROUP</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/techblog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/techblog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/techblog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/techblog/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/techblog/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/techblog/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/techblog/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/techblog/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
