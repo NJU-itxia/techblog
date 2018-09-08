@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/techblog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/techblog/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/techblog/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/techblog/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/techblog/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/techblog/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/techblog/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="IT侠 WEB 组">
+<meta property="og:url" content="https://nju-itxia.github.io/techblog/index.html">
+<meta property="og:site_name" content="IT侠 WEB 组">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IT侠 WEB 组">
+
+
+
+
+
+
+  <link rel="canonical" href="https://nju-itxia.github.io/techblog/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>IT侠 WEB 组</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/techblog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">IT侠 WEB 组</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">NJU-ITXIA WEB GROUP</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/techblog/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Accueil</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/techblog/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2017/09/03/group-log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NJU-ITXIA WEB GROUP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/techblog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT侠 WEB 组">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/techblog/2017/09/03/group-log/" itemprop="url">
+                  团队项目日志
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2017-09-03 22:00:11" itemprop="dateCreated datePublished" datetime="2017-09-03T22:00:11+08:00">2017-09-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-09-08 14:04:12" itemprop="dateModified" datetime="2018-09-08T14:04:12+08:00">2018-09-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/techblog/categories/日志/" itemprop="url" rel="index"><span itemprop="name">日志</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="2018-09"><a href="#2018-09" class="headerlink" title="2018.09"></a>2018.09</h2><ul>
+<li>新学期~</li>
+<li>前后端分离工作继续进行中，方案初步制定完成</li>
+</ul>
+<h2 id="2017-09"><a href="#2017-09" class="headerlink" title="2017.09"></a>2017.09</h2><ul>
+<li>完成 DNSpod 和 域名的实名认证</li>
+<li>部署 WEB 组技术博客 nju-itxia.github.io/techblog</li>
+</ul>
+<h2 id="2017-05"><a href="#2017-05" class="headerlink" title="2017.05"></a>2017.05</h2><ul>
+<li>更新二级域名解析</li>
+<li>发布主站 itxia.club</li>
+<li>更改预约系统域名为 help.itxia.club</li>
+<li>恢复博客系统 blog.itxia.club</li>
+</ul>
+<h2 id="2016-12"><a href="#2016-12" class="headerlink" title="2016.12"></a>2016.12</h2><ul>
+<li>预约系统迁出至当前生产环境</li>
+</ul>
+<h2 id="2016-04"><a href="#2016-04" class="headerlink" title="2016.04"></a>2016.04</h2><ul>
+<li>预约系统从ＳＡＥ迁移至腾讯云，域名改为<del><a href="http://itxia.club/" target="_blank" rel="noopener">http://itxia.club/</a></del> <a href="http://help.itxia.club" target="_blank" rel="noopener">http://help.itxia.club</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2018/09/08/vue-front-end-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NJU-ITXIA WEB GROUP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/techblog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT侠 WEB 组">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/techblog/2018/09/08/vue-front-end-note/" itemprop="url">
+                  预约系统前端方案
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-09-08 13:08:53 / Updated at: 14:07:54" itemprop="dateCreated datePublished" datetime="2018-09-08T13:08:53+08:00">2018-09-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="整理中"><a href="#整理中" class="headerlink" title="整理中"></a>整理中</h1>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2017/07/03/help-system-release-notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NJU-ITXIA WEB GROUP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/techblog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT侠 WEB 组">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/techblog/2017/07/03/help-system-release-notes/" itemprop="url">
+                  IT侠预约系统 Release Notes
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2017-07-03 14:40:05" itemprop="dateCreated datePublished" datetime="2017-07-03T14:40:05+08:00">2017-07-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-28 21:21:29" itemprop="dateModified" datetime="2018-08-28T21:21:29+08:00">2018-08-28</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/techblog/categories/日志/" itemprop="url" rel="index"><span itemprop="name">日志</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Website"><a href="#Website" class="headerlink" title="Website"></a>Website</h2><ul>
+<li><a href="http://help.itxia.club" target="_blank" rel="noopener">http://help.itxia.club</a> <del><a href="http://itxia.club/" target="_blank" rel="noopener">http://itxia.club/</a></del></li>
+</ul>
+<hr>
+<h2 id="v20170701"><a href="#v20170701" class="headerlink" title="v20170701"></a>v20170701</h2><h4 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h4><ul>
+<li>更新免责条款</li>
+<li>增加导航栏内容</li>
+<li>增加募捐按钮</li>
+</ul>
+<hr>
+<h2 id="v2-5-20160414"><a href="#v2-5-20160414" class="headerlink" title="v2.5(20160414)"></a>v2.5(20160414)</h2><h4 id="Features-1"><a href="#Features-1" class="headerlink" title="Features"></a>Features</h4><ul>
+<li>若预约时填写邮箱，成功提交后，预约者会收到通知邮件，IT侠有站内回复时，有邮件推送</li>
+<li>在预约界面和后台管理界面增加提交反馈的按钮</li>
+<li>服务器从ＳＡＥ迁移至腾讯云，域名改为<del><a href="http://itxia.club/" target="_blank" rel="noopener">http://itxia.club/</a></del> <a href="http://help.itxia.club" target="_blank" rel="noopener">http://help.itxia.club</a></li>
+</ul>
+<p><img src="/images/notif2.png" alt=""></p>
+<h4 id="Fixes"><a href="#Fixes" class="headerlink" title="Fixes"></a>Fixes</h4><ul>
+<li>无</li>
+</ul>
+<h4 id="Known-Issues-and-Problems"><a href="#Known-Issues-and-Problems" class="headerlink" title="Known Issues and Problems"></a>Known Issues and Problems</h4><ul>
+<li>暂无</li>
+</ul>
+<hr>
+<h2 id="V20151218"><a href="#V20151218" class="headerlink" title="V20151218"></a>V20151218</h2><h4 id="Features-2"><a href="#Features-2" class="headerlink" title="Features"></a>Features</h4><ul>
+<li>管理员可为IT侠添加、修改或删除其个人Email地址</li>
+<li>新增预约时，添加过Email地址的IT侠将收到通知邮件</li>
+<li>后台设置页面，优化移动端的响应式布局</li>
+<li>为预约表单增加醒目提示</li>
+<li>预约界面新增“友情提示”和微信公众号二维码</li>
+</ul>
+<h4 id="Fixes-1"><a href="#Fixes-1" class="headerlink" title="Fixes"></a>Fixes</h4><ul>
+<li>修复后台“最近回复”页面的回复时间显示错误</li>
+<li>修复Firefox新版下，预约订单无法上传图片</li>
+</ul>
+<h4 id="Known-Issues-and-Problems-1"><a href="#Known-Issues-and-Problems-1" class="headerlink" title="Known Issues and Problems"></a>Known Issues and Problems</h4><ul>
+<li>暂无</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nju-itxia.github.io/techblog/techblog/2016/03/13/dev-preparation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NJU-ITXIA WEB GROUP">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/techblog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="IT侠 WEB 组">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/techblog/2016/03/13/dev-preparation/" itemprop="url">
+                  开发前的准备
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posté le</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2016-03-13 21:05:23" itemprop="dateCreated datePublished" datetime="2016-03-13T21:05:23+08:00">2016-03-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-08-28 21:21:29" itemprop="dateModified" datetime="2018-08-28T21:21:29+08:00">2018-08-28</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本文来自于 王少兵 ，从以前的博客迁出，仅作参考</p>
+</blockquote>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ol>
+<li>系统 *nix</li>
+<li>Python 2.7.10</li>
+<li>NodeJS v4.0.0</li>
+<li>MongoDB 3.0.7</li>
+</ol>
+<h2 id="使用的框架和库的部分参考文档"><a href="#使用的框架和库的部分参考文档" class="headerlink" title="使用的框架和库的部分参考文档"></a>使用的框架和库的部分参考文档</h2><h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><p>前端使用 React 库构建，React 使用 ES2015 规范，和之前的 JavaScript 语法有差别，需要学习一下。React 的文档可以查看官网，阮一峰也有一个教程。我们直接使用 React-Bootstrap 库，该库已经把很多元素组件化了，可以直接拿来用。</p>
+<ol>
+<li><a href="http://asdf/com" target="_blank" rel="noopener">ReactJS</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="noopener">React 入门实例教程</a></li>
+<li><a href="http://blog.andrewray.me/reactjs-for-stupid-people/" target="_blank" rel="noopener">ReactJS For Stupid People</a></li>
+<li><a href="https://react-bootstrap.github.io/" target="_blank" rel="noopener">React-Bootstrap</a></li>
+<li><a href="http://babeljs.io/docs/learn-es2015/" target="_blank" rel="noopener">Learn ES2015</a></li>
+<li><a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6入门</a></li>
+</ol>
+<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>后端使用 Flask 框架和 Eve 库，来提供 RESTful 风格的接口向前端提供数据。</p>
+<ol>
+<li><a href="http://flask.pocoo.org/docs/0.10/" target="_blank" rel="noopener">Flask Documentation</a></li>
+<li><a href="http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target="_blank" rel="noopener">Flask Web Development</a></li>
+<li><a href="http://python-eve.org/" target="_blank" rel="noopener">Python Eve</a></li>
+</ol>
+<blockquote>
+<p>16 年 3 月第一次发布，看来这坑真的有点老了</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">NJU-ITXIA WEB GROUP</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/techblog/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">articles</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/techblog/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/techblog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NJU-ITXIA WEB GROUP</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Thème – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/techblog/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/techblog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/techblog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/techblog/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/techblog/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/techblog/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
