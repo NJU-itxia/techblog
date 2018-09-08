@@ -7,7 +7,7 @@ title: IT侠 WEB 组
 subtitle: NJU-ITXIA WEB GROUP
 description: 
 author: NJU-ITXIA WEB GROUP
-language: zh-Hans
+language: zh-CN
 timezone:
 
 # URL
@@ -79,4 +79,4 @@ theme: next
 deploy:
   type: git
   repo: https://github.com/NJU-itxia/techblog.git
-  branch: dev
+  branch: gh-pages
