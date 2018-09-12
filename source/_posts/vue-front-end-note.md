@@ -10,6 +10,8 @@ categories:
 
 > 整理自 刘洋@liuyang0717:/itxia前端方案(https://zybuluo.com/liuyang0717/note/1276062)
 
+<!--more-->
+
 ## 技术选型(整体)
 
 使用MVVM模式，选用vue这一MVVM框架，webpack为打包工具，nginx为代理服务器

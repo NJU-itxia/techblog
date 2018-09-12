@@ -11,6 +11,8 @@ categories:
 - 下列为后端提供的REST接口，包含uri, 参数, 及返回值
 - 使用ajax调用, 传递数据格式为json
 
+<!--more-->
+
 ## 接口
 
 ### 用户登入
@@ -52,11 +54,37 @@ success: bool
 
 ---
 
+### 用户修改当前预约单
+
+地址: `/customer/modifyAppointment`
+
+参数: 
+```
+name: string,
+email: string?,
+campus: string,
+deviceVersion: string,
+systemVersion: string,
+description: string,
+file: string?
+```
+
+返回: 
+```
+success: bool
+```
+
+---
+
 ### 用户删除预约
 
 地址: `/customer/deleteAppointment`
 
 参数:
+
+```
+orderId: string
+```
 
 返回:
 
@@ -91,6 +119,24 @@ success: bool
 ```
 success: bool,
 appointment: Appointment
+```
+
+---
+
+### 用户回复当前预约
+
+地址: `/customer/reply`
+
+参数:
+
+```
+content: string
+```
+
+返回:
+
+```
+success: bool
 ```
 
 ---
