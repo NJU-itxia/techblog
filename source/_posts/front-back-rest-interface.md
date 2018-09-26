@@ -123,13 +123,14 @@ appointment: Appointment
 
 ---
 
-### 用户回复当前预约
+### 用户回复某个预约/为某个预约添加评论
 
 地址: `/customer/reply`
 
 参数:
 
 ```
+appointmentId: number,
 content: string
 ```
 
@@ -313,7 +314,9 @@ success: bool
 参数:
 ```
 username: string,
-password: string
+password: string,
+location: string,
+name: string
 ```
 
 返回:
