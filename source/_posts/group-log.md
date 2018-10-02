@@ -7,14 +7,19 @@ categories:
 top: true
 ---
 
+## 2018.10
+
+- 预约系统使用域名itxia.site, 网址 https://itxia.site/
+- 邮件服务器mail.itxia.site搭建完成
+
+<!--more-->
+
 ## 2018.09
 
 - 新学期~
 - 前后端分离工作继续进行中，方案初步制定完成
 - 技术博客主题更换，添加背景
 - 主页强制https
-
-<!--more-->
 
 ## 2017.09
 

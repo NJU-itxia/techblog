@@ -8,7 +8,10 @@ categories:
 ---
 
 ## Website
-* http://help.itxia.club ~~http://itxia.club/~~
+* https://itxia.site ~~http://help.itxia.club~~ ~~http://itxia.club/~~
+* 2018/10/2 更换为https,http/2,启用hsts
+
+<!--more-->
 
 ---
 
@@ -19,8 +22,6 @@ categories:
 * 更新免责条款
 * 增加导航栏内容
 * 增加募捐按钮
-
-<!--more-->
 
 ---
 ## v2.5(20160414)
